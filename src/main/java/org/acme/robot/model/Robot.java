@@ -53,7 +53,7 @@ public class Robot {
         checkRobotIsOnTable();
         int index = (factionDirection.ordinal() - 1) % Direction.values().length;
         if (index < 0) {
-            factionDirection = Direction.West;
+            factionDirection = Direction.WEST;
         } else {
             factionDirection = Direction.values()[index];
         }
@@ -80,16 +80,16 @@ public class Robot {
     private Point executeMove() {
         Point newPoint = new Point(this.position);
         switch(factionDirection) {
-            case North:
+            case NORTH:
                 newPoint.setLocation(this.position.getX(), this.position.getY() + 1);
                 break;
-            case West:
+            case WEST:
                 newPoint.setLocation(this.position.getX() - 1, this.position.getY());
                 break;
-            case East:
+            case EAST:
                 newPoint.setLocation(this.position.getX() + 1, this.position.getY());
                 break;
-            case South:
+            case SOUTH:
                 newPoint.setLocation(this.position.getX(), this.getPosition().getY() - 1);
                 break;
         }

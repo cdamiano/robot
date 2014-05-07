@@ -15,7 +15,7 @@ public class TurnRightCommandTest extends AbstractMovementCommandTest {
 
     @Override
     protected void assertCommandOutcome() {
-        assertThat(robot.facingDirection(), is(Direction.East));
+        assertThat(robot.facingDirection(), is(Direction.EAST));
     }
 
 }

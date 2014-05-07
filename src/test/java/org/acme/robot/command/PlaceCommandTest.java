@@ -27,13 +27,13 @@ public class PlaceCommandTest {
     public void shouldCreatePlaceCommand() {
         //given
         Robot robot = new Robot(new TableTop(5, 5));
-        placeCommand = new PlaceCommand(eventBus, new Point(1, 1), Direction.North);
+        placeCommand = new PlaceCommand(eventBus, new Point(1, 1), Direction.NORTH);
 
         //when
         placeCommand.execute(robot);
 
         //then
         assertThat(robot.getPosition(), is(equalTo(new Point(1, 1))));
-        assertThat(robot.facingDirection(), is(Direction.North));
+        assertThat(robot.facingDirection(), is(Direction.NORTH));
     }
 }

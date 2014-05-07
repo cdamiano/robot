@@ -34,7 +34,7 @@ public abstract class AbstractMovementCommandTest {
     @Test
     public void shouldExecute() {
         //given
-        robot.placeOnTable(new Point(0,0), Direction.North);
+        robot.placeOnTable(new Point(0,0), Direction.NORTH);
 
         //when
         robotCommand.execute(robot);

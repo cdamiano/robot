@@ -26,4 +26,16 @@ public class PlaceCommand extends AbstractRobotCommandWithEventBus {
     protected String getTag() {
         return getClass().getSimpleName();
     }
+
+    public int getX() {
+        return point.x;
+    }
+
+    public int getY() {
+        return point.y;
+    }
+
+    public Direction getDirection() {
+        return direction;
+    }
 }

@@ -17,10 +17,10 @@ public class RobotTurnRightTest extends AbstractRobotTurnTest {
     @Parameterized.Parameters
     public static Collection<Object[]> testParameters() {
         return Arrays.asList(new Object[][]{
-                {Direction.North, Direction.East},
-                {Direction.East, Direction.South},
-                {Direction.South, Direction.West},
-                {Direction.West, Direction.North}
+                {Direction.NORTH, Direction.EAST},
+                {Direction.EAST, Direction.SOUTH},
+                {Direction.SOUTH, Direction.WEST},
+                {Direction.WEST, Direction.NORTH}
         });
     }
 

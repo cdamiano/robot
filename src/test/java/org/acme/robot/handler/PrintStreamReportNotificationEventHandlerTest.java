@@ -8,7 +8,7 @@ import java.awt.Point;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
-import static org.acme.robot.model.Direction.North;
+import static org.acme.robot.model.Direction.NORTH;
 import static org.hamcrest.CoreMatchers.containsString;
 import static org.junit.Assert.assertThat;
 
@@ -28,7 +28,7 @@ public class PrintStreamReportNotificationEventHandlerTest {
     public void shouldAnnounceRobot() {
         //given
         Point point = new Point(3,5);
-        ReportNotificationEvent event = new ReportNotificationEvent(point, North);
+        ReportNotificationEvent event = new ReportNotificationEvent(point, NORTH);
 
         //when
         handler.handleEvent(event);
@@ -36,7 +36,7 @@ public class PrintStreamReportNotificationEventHandlerTest {
         //then
         assertThat(outputStream.toString(), containsString(Integer.toString(event.robotPosition.x)));
         assertThat(outputStream.toString(), containsString(Integer.toString(event.robotPosition.y)));
-        assertThat(outputStream.toString(), containsString(North.name().toUpperCase()));
+        assertThat(outputStream.toString(), containsString(NORTH.name().toUpperCase()));
     }
 
     @Test(expected = IllegalArgumentException.class)

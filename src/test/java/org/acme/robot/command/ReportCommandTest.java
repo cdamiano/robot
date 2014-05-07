@@ -35,7 +35,7 @@ public class ReportCommandTest {
     public void shouldReportRobotPosition() {
         //given
         Robot robot = new Robot(new TableTop(5, 5));
-        robot.placeOnTable(new Point(3, 5), Direction.North);
+        robot.placeOnTable(new Point(3, 5), Direction.NORTH);
 
         //when
         reportCommand.execute(robot);

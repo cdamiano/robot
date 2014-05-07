@@ -29,7 +29,13 @@ public class RobotTest {
 
         //then
         assertThat(robot.getPosition(), is(equalTo(point)));
-        assertThat(robot.getFacingDirection(), is(equalTo(Direction.North)));
+        assertThat(robot.facingDirection(), is(equalTo(Direction.North)));
+        assertThat(robot.isPlaced(), is(true));
+    }
+
+    @Test
+    public void shouldNotBePlaced() {
+        assertThat(robot.isPlaced(), is(false));
     }
 
     @Test(expected = NullPointerException.class)
@@ -77,25 +83,25 @@ public class RobotTest {
     @Test
     public void shouldMoveOneUnitWest() throws Exception {
         //given
-        robot.placeOnTable(new Point(0, 0), Direction.West);
+        robot.placeOnTable(new Point(1, 0), Direction.West);
 
         //when
         robot.moveForward();
 
         //then
-        assertThat(robot.getPosition(), is(equalTo(new Point(1, 0))));
+        assertThat(robot.getPosition(), is(equalTo(new Point(0, 0))));
     }
 
     @Test
     public void shouldMoveOneUnitEast() throws Exception {
         //given
-        robot.placeOnTable(new Point(5, 5), Direction.East);
+        robot.placeOnTable(new Point(4, 5), Direction.East);
 
         //when
         robot.moveForward();
 
         //then
-        assertThat(robot.getPosition(), is(equalTo(new Point(4, 5))));
+        assertThat(robot.getPosition(), is(equalTo(new Point(5, 5))));
     }
 
     @Test

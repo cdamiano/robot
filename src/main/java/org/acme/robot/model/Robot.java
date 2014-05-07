@@ -21,7 +21,7 @@ public class Robot {
     }
 
     public void placeOnTable(Point point, Direction direction) {
-        checkArgumentsForPlaceOnTableTop(point, direction);
+        checkArgumentsForPlaceOnTable(point, direction);
         this.position = point;
         this.factionDirection = direction;
         this.placed = true;
@@ -31,7 +31,7 @@ public class Robot {
         return position;
     }
 
-    public Direction getFacingDirection() {
+    public Direction facingDirection() {
         return factionDirection;
     }
 
@@ -59,7 +59,7 @@ public class Robot {
         }
     }
 
-    private void checkArgumentsForPlaceOnTableTop(Point point, Direction direction) {
+    private void checkArgumentsForPlaceOnTable(Point point, Direction direction) {
         checkNotNull(point, "Point can not be null.");
         checkNotNull(direction, "Point can not be null.");
         checkArgument(tableTop.isValidPosition(point), "Point is invalid.");
@@ -69,7 +69,7 @@ public class Robot {
         if (isNotPlaced()) throw new IllegalMovementException("Robot is not on table.");
     }
 
-    private boolean isPlaced() {
+    public boolean isPlaced() {
         return placed;
     }
 
@@ -84,10 +84,10 @@ public class Robot {
                 newPoint.setLocation(this.position.getX(), this.position.getY() + 1);
                 break;
             case West:
-                newPoint.setLocation(this.position.getX() + 1, this.position.getY());
+                newPoint.setLocation(this.position.getX() - 1, this.position.getY());
                 break;
             case East:
-                newPoint.setLocation(this.position.getX() - 1, this.position.getY());
+                newPoint.setLocation(this.position.getX() + 1, this.position.getY());
                 break;
             case South:
                 newPoint.setLocation(this.position.getX(), this.getPosition().getY() - 1);

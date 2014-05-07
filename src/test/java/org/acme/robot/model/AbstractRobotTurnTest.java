@@ -2,8 +2,6 @@ package org.acme.robot.model;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized;
 
 import java.awt.Point;
 
@@ -29,7 +27,7 @@ public abstract class AbstractRobotTurnTest {
 
         executeTurn();
 
-        assertThat(robot.getFacingDirection(), is(equalTo(expectedDirection)));
+        assertThat(robot.facingDirection(), is(equalTo(expectedDirection)));
     }
 
     public abstract void executeTurn() throws Exception;

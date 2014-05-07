@@ -16,13 +16,11 @@ import static org.junit.Assert.assertThat;
 
 public class RobotSimulationTest {
 
-    private String commands;
-
     private ByteArrayOutputStream outputStream;
 
     @Before
     public void setup() {
-        commands = "PLACE 0,0,NORTH\n" +
+        String commands = "PLACE 0,0,NORTH\n" +
                    "RIGHT\n" +
                    "MOVE\n" +
                    "REPORT";

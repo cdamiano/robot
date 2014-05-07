@@ -1,5 +1,6 @@
 package org.acme.robot.handler;
 
+import com.google.common.eventbus.Subscribe;
 import org.acme.robot.event.RobotNotOnBoardEvent;
 
 import java.io.PrintStream;
@@ -15,6 +16,7 @@ public class PrintStreamReportRobotNotOnTableEventHandler implements ReportRobot
         this.printStream = printStream;
     }
 
+    @Subscribe
     @Override
     public void handleEvent(RobotNotOnBoardEvent event) {
         printStream.println("Robot is not placed on board");

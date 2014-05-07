@@ -52,12 +52,12 @@ public class CommandInterpreter {
         try {
             return Command.valueOf(commandString.toUpperCase());
         } catch(IllegalArgumentException ex) {
-            throw new IllegalCommandException(commandString);
+            throw new IllegalCommandException("Unknown command: [" + commandString + "]");
         }
     }
 
     private RobotCommand newPlaceCommand(String commandString) throws IllegalCommandException {
-        Matcher matcher = PLACE_PATTERN.matcher(commandString);
+        Matcher matcher = PLACE_PATTERN.matcher(commandString.toUpperCase());
 
         if (exactMatch(matcher)) {
             int x = parseInteger(matcher.group(X_COORDINATE));
@@ -65,7 +65,7 @@ public class CommandInterpreter {
             String direction = matcher.group(DIRECTION);
             return new PlaceCommand(eventBus, new Point(x, y), parseDirection(direction));
         } else {
-            throw new IllegalCommandException(commandString);
+            throw new IllegalCommandException("Unknown command: [" + commandString + "]");
         }
 
     }
@@ -74,7 +74,7 @@ public class CommandInterpreter {
         try {
             return Direction.valueOf(direction.toUpperCase());
         } catch (IllegalArgumentException ex) {
-            throw new IllegalCommandException("PLACE command has an invalid direction [" + direction + "]", ex);
+            throw new IllegalCommandException("PLACE command has an invalid direction [" + direction + "]");
         }
     }
 

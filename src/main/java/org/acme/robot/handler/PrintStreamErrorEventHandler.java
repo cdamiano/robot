@@ -20,6 +20,6 @@ public class PrintStreamErrorEventHandler implements ErrorEventHandler {
     @Override
     public void handleEvent(ErrorEvent error) {
         printStream.print(String.format("%s: %s\n", error.tag, error.exception.getMessage()));
-        error.exception.printStackTrace(printStream);
+//        error.exception.printStackTrace(printStream);
     }
 }

@@ -1,11 +1,6 @@
 package org.acme.robot.command;
 
 import com.google.common.eventbus.EventBus;
-import com.google.common.eventbus.Subscribe;
-import org.acme.robot.event.ReportNotificationEvent;
-import org.acme.robot.handler.ReportNotificationEventHandler;
-import org.acme.robot.handler.ReportRobotNotOnTableEventHandler;
-import org.acme.robot.event.RobotNotOnBoardEvent;
 import org.acme.robot.model.Direction;
 import org.acme.robot.model.Robot;
 import org.acme.robot.model.TableTop;
@@ -55,26 +50,6 @@ public class ReportCommandTest {
 
         //then
         assertThat(reportHandler.robotNotBoardWasCalled, is(true));
-    }
-
-    private static class MockReportNotificationEventHandler implements ReportNotificationEventHandler, ReportRobotNotOnTableEventHandler {
-        public Point robotPosition;
-        public Direction robotFacing;
-        public boolean robotNotBoardWasCalled;
-
-        @Subscribe
-        @Override
-        public void handleEvent(ReportNotificationEvent event) {
-            robotPosition = event.robotPosition;
-            robotFacing = event.robotFacing;
-        }
-
-        @Subscribe
-        @Override
-        public void handleEvent(RobotNotOnBoardEvent event) {
-            robotNotBoardWasCalled = true;
-
-        }
     }
 
 }

@@ -22,6 +22,17 @@ import java.io.InputStreamReader;
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.io.Closeables.closeQuietly;
 
+/**
+ * <p>
+ *     This class runs the command issued in the {@link java.io.InputStream} of the {@link #run(java.io.InputStream)} method.
+ *     It creates the {@link org.acme.robot.model.Robot} with a {@link org.acme.robot.model.TableTop} of 5 x 5.
+ * </p>
+ * <p>
+ *     You can override the event handlers with your own implementation if you wish to handle the event differently.  At them
+ *     moment the handlers use {@link System#out} for report notification and {@link System#err} for error reporting.
+ * </p>
+ *
+ */
 public class RobotController {
 
     private EventBus eventBus;

@@ -25,11 +25,15 @@ public class CommandInterpreter {
 
     public RobotCommand fromString(String commandString) throws IllegalCommandException {
         checkArgument(commandString != null, "Command string can not be null.");
-        if (commandString.toUpperCase().startsWith(Command.PLACE.name())) {
+        if (isPlaceCommand(commandString)) {
             return newPlaceCommand(commandString);
         } else {
             return simpleCommand(commandString);
         }
+    }
+
+    private boolean isPlaceCommand(String commandString) {
+        return commandString.toUpperCase().startsWith(Command.PLACE.name());
     }
 
     private RobotCommand simpleCommand(String commandString) throws IllegalCommandException {

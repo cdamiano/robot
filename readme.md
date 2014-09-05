@@ -1,5 +1,5 @@
 # Toy Robot
-[ ![Codeship Status for cdamiano/robot](https://www.codeship.io/projects/a458d250-16f5-0132-5f85-2e35c05e22b1/status)](https://www.codeship.io/projects/33968)
+(https://travis-ci.org/cdamiano/robot.svg?branch=master)
 The application is a simulation of a toy robot moving on a square tabletop, of dimensions 5 units x 5 units.
 
 *   There are no other obstructions on the table surface.

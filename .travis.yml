@@ -4,7 +4,7 @@ jdk:
 - oraclejdk7
 
 env:
--TERM=dumb
+- TERM=dumb
 
 after_success:
 - ./gradlew cobertura coveralls

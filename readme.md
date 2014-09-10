@@ -1,5 +1,7 @@
 # Toy Robot
 [![Build Status](https://travis-ci.org/cdamiano/robot.svg?branch=master)](https://travis-ci.org/cdamiano/robot)
+[![Coverage Status](https://coveralls.io/repos/cdamiano/robot/badge.png)](https://coveralls.io/r/cdamiano/robot)
+
 
 The application is a simulation of a toy robot moving on a square tabletop, of dimensions 5 units x 5 units.
 

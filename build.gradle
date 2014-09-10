@@ -1,14 +1,16 @@
+apply plugin: 'java'
+apply plugin: 'cobertura'
+apply plugin: 'com.github.kt3k.coveralls'
+
 buildscript {
     repositories {
         mavenCentral()
     }
     dependencies {
         classpath "net.saliman:gradle-cobertura-plugin:2.2.2"
+        classpath 'org.kt3k.gradle.plugin:coveralls-gradle-plugin:2.0.0'
     }
 }
-
-apply plugin: 'java'
-apply plugin: 'cobertura'
 
 sourceCompatibility = 1.7
 version = '1.0'
@@ -33,6 +35,8 @@ configurations {
     intTestCompile.extendsFrom testCompile
     intTestRuntime.extendsFrom testRuntime
 }
+
+cobertura.coverageFormats = ['html', 'xml']
 
 task intTest(type:Test){
     description = "Run integration tests (located in src/intTest/...)."

@@ -8,3 +8,7 @@ env:
 
 after_success:
 - ./gradlew cobertura coveralls
+
+notifications:
+  email:
+    - con.damianopoulos@gmail.com
